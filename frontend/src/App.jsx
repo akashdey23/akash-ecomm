@@ -10,8 +10,7 @@ import Login from "./pages/Login"
 import Placeorder from "./pages/Placeorder"
 import Orders from "./pages/Orders"
 import Navbar from './components/Navbar'
-import React from 'react'
-import './App.css'
+
 
 function App() {
 
