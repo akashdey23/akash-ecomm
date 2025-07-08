@@ -9,6 +9,7 @@ const LatestCollection = () => {
 
     const {products} = useContext(ShopContext);
     // console.log(products);
+
     const [latestProducts, setLatestProducts] = useState([]);
 
     useEffect(() => {
@@ -24,7 +25,7 @@ const LatestCollection = () => {
     <div className='my-10'>
         <div className='text-center py-8 text-3xl'>
             <Title text1={'LATEST'} text2={'COLLECTIONS'} />
-            <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit sapiente tempora voluptatum sint voluptatem unde deleniti exercitationem in repudiandae praesentium.
+            <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>Discover our latest collections crafted with elegance and precision. Redefine your style with pieces designed for every occasion.
             </p>
         </div>
         {/* Rendering products */}

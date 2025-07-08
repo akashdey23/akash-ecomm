@@ -10,6 +10,7 @@ import Login from "./pages/Login"
 import Placeorder from "./pages/Placeorder"
 import Orders from "./pages/Orders"
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -29,9 +30,7 @@ function App() {
           <Route path='/placeorder' element={<Placeorder />}/>
           <Route path='/orders' element={<Orders />}/>
         </Routes>
-        <p className="text-3xl font-bold underline">
-          Hello world!
-        </p>
+        <Footer />
       </div>
     </>
   )
