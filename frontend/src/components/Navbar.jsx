@@ -2,9 +2,12 @@ import React, { useState } from 'react'
 import { assets } from '../assets/assets'
 import { NavLink, Link } from 'react-router-dom'
 import "../index.css"
+import { ShopContext } from '../context/ShopContext'
+import { useContext } from 'react'
 const Navbar = () => {
 
   const [visible, setVisible] = useState(false);
+  const {setShowSearch} = useContext(ShopContext);
 
   return (
     <div className="flex justify-between items-center font-medium py-5">
@@ -28,7 +31,7 @@ const Navbar = () => {
         </NavLink>
       </ul>
       <div className='flex items-center gap-6'>
-        <img src={assets.search_icon} className='w-5 cursor-pointer' alt="" />
+        <img onClick={()=>(setShowSearch(true))} src={assets.search_icon} className='w-5 cursor-pointer' alt="" />
         <div className='group relative' >
           <img className='w-5 cursor-pointer' src={assets.profile_icon} alt=""/>
           <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
@@ -47,7 +50,9 @@ const Navbar = () => {
         onClick={()=>setVisible(true)} src={assets.menu_icon} className='w-5 cursor-pointer sm:hidden'/>
       </div>
     {/* sidebar menu for small screens */}
-    <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? 'w-full' : 'w-0'}`}>
+    <div className={`fixed top-0 right-0 h-full w-2/3 max-w-xs bg-white shadow-lg transition-transform duration-300 ease-in-out transform ${
+    visible ? 'translate-x-0' : 'translate-x-full'
+  } z-50`}>
         <div className='flex flex-col text-gray-600 '>
             <div className='flex items-center gap-4 p-3 cursor-pointer' onClick={()=>setVisible(false)}>
               <img src={assets.dropdown_icon} className='h-4 rotate-180'/>
